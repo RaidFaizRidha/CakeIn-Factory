@@ -1,0 +1,120 @@
+/* Large devices such as laptops and dekstop (1024px and up) */
+/* Here’s a color palette inspired by the example:
+
+Creamy Beige (#F7F4F0) – For the background grid and main content areas.
+Rusty Red (#D35C4D) – For the accent sections and button backgrounds.
+Charcoal Black (#333333) – For the text in titles and important text sections.
+Soft White (#FFFFFF) – For backgrounds within icons or light text sections.
+Warm Gray (#B8A89D) – For the grid lines and subtle borders.
+Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
+
+@media only screen and (min-width: 1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 20px;
+        font-weight: 450;
+    }
+
+    #header {
+        padding: 20px;
+        background-color: #F0EDE8;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow-y: hidden;
+        height: 70px;
+    }
+
+    .logo img {
+        border-radius: 15px;
+    }
+
+    #navbar li {
+        list-style: none;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    #navbar li a {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #333333;
+        transition: 0.3s ease;
+    }
+
+    #navbar .navbar-menu:hover,
+    #navbar .navbar-menu.active {
+        color: white;
+    }
+
+    #navbar .navbar-menu.active:after,
+    #navbar .navbar-menu:hover::after {
+        content: "";
+        width: 30%;
+        height: 2px;
+        background: white;
+        position: absolute;
+        bottom: -4px;
+        left: 20px;
+        animation: navbar 0.3s ease;
+    }
+
+    @keyframes navbar {
+        from {
+            transform: 
+            translateX(-30px);
+        }
+
+        to {
+            transform: 
+            translateX(0);
+        }
+    }
+
+    .bi-type-bold {
+        stroke: white;
+        stroke-width: 1.3px;
+    }
+
+    #cart-container {
+        height: 50px;
+        width: 50px;
+        background-color: #333333;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease;
+    }
+
+    #cart-container:hover {
+        background-color: white;
+    }
+
+    #cart-container:hover .bi-type-bold {
+        stroke: #333333;
+    }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 640px) {}
+
+
+
+
+
