@@ -8,6 +8,10 @@ Soft White (#FFFFFF) – For backgrounds within icons or light text sections.
 Warm Gray (#B8A89D) – For the grid lines and subtle borders.
 Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
+/* * {
+    outline: 1px solid green;
+} */
+
 @media only screen and (min-width: 1024px) {
     * {
         margin: 0;
@@ -22,10 +26,19 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-weight: 450;
     }
 
+    /* #header {
+        padding: 20px;
+        background-color: #F0EDE8;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    } */
+
     #header {
         padding: 20px;
         background-color: #F0EDE8;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     #navbar {
@@ -33,6 +46,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         align-items: center;
         justify-content: space-between;
         overflow-y: hidden;
+        gap: 40px;
         height: 70px;
     }
 
@@ -48,7 +62,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #navbar li a {
         text-decoration: none;
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 600;
         color: #333333;
         transition: 0.3s ease;
@@ -56,7 +70,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #navbar .navbar-menu:hover,
     #navbar .navbar-menu.active {
-        color: white;
+        color: rgb(73, 55, 55);
     }
 
     #navbar .navbar-menu.active:after,
@@ -64,7 +78,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         content: "";
         width: 30%;
         height: 2px;
-        background: white;
+        background: rgb(73, 55, 55);
         position: absolute;
         bottom: -4px;
         left: 20px;
