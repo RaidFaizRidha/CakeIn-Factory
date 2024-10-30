@@ -20,7 +20,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     body {
-        width: 100vw;
+        width: 100%;
         font-family: "Ubuntu", sans-serif;
         font-size: 20px;
         font-weight: 450;
@@ -37,6 +37,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         top: 0;
         border-bottom: 1px solid #444444;
         overflow: hidden;
+        z-index: 1;
     }
 
     #navbar {
@@ -68,7 +69,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #navbar .navbar-menu:hover,
     #navbar .navbar-menu.active {
-        color: rgb(104, 101, 101);
+        color: #d6bb80;
         font-size: 1.2rem;
     }
 
@@ -77,7 +78,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         content: "";
         width: 30%;
         height: 2px;
-        background: rgb(104, 101, 101);
+        background: #d6bb80;
         position: absolute;
         bottom: -4px;
         left: 20px;
@@ -141,6 +142,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         position: relative;
         color: #444444;
         margin: 0 50px;
+        width: 80%;
     }
 
     #foreword h1 {
@@ -229,6 +231,49 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     #button-foreword:hover {
         background-color: white;
         color: #444444;
+    }
+
+    #services {
+        overflow: hidden;
+        background-color: #d6bb80;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 350px;
+        /* outline: 1px solid #444444; */
+    }
+
+    #services-main-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        gap: 15px;
+    }
+
+    .services-container {
+        outline: 1px solid white;
+        height: 250px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .services-container span {
+        margin-top: 20px;
+        font-size: 1.1rem;
+    }
+
+    #products {
+        overflow: hidden;
+        background-color: #fcf3cf;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
     }
 }
 
