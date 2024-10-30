@@ -153,6 +153,11 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         margin-bottom: 10px;
     }
 
+    #foreword span {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
     @media (max-width: 1493px) {
         #foreword {
             padding: 50px 0;
@@ -163,38 +168,37 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         }
     }
 
-    @media (max-width: 1237px) {
+    @media (max-width: 1294px) {
         #foreword h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
         }
-    }
 
-    #foreword span {
-        font-size: 1rem;
-        margin-bottom: 30px;
+        #foreword span {
+            font-size: 0.9rem;
+        }
     }
 
     .cake-design-foreword {
         outline: 1px solid #444444;
-        height: 150px;
+        height: 200px;
         position: absolute;
     }
 
     #slice-cake {
-        width: 100px;
+        width: 160px;
         left: 20px;
         bottom: -30px;
     }
 
     #full-cake {
-        width: 80px;
+        width: 120px;
         right: 0;
         top: 70px;
     }
 
     #slice-cake-in {
-        width: 100px;
-        height: 150px;
+        width: 160px;
+        height: 200px;
         background-color: #d6bb80;
         position: absolute;
         left: -10px;
@@ -203,15 +207,15 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #slice-cake-in img {
         position: absolute;
-        height: 190px;
+        height: 260px;
         max-width: auto;
-        bottom: -17px;
-        left: -22px;
+        bottom: -30px;
+        left: -20px;
     }
 
     #full-cake-in {
-        width: 100px;
-        height: 150px;
+        width: 160px;
+        height: 200px;
         background-color: #d6bb80;
         position: absolute;
         top: -10px;
@@ -220,7 +224,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #full-cake-in img {
         position: absolute;
-        height: 220px;
+        height: 270px;
         max-width: auto;
         bottom: -35px;
         right: -30px;
