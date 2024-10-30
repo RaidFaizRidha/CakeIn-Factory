@@ -128,7 +128,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 720px;
+        height: 680px;
     }
 
     #foreword {
@@ -142,7 +142,8 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         position: relative;
         color: #444444;
         margin: 0 50px;
-        width: 80%;
+        width: 85%;
+        max-width: 1300px;
     }
 
     #foreword h1 {
@@ -150,7 +151,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         margin-bottom: 10px;
     }
 
-    @media (max-width: 1152px) {
+    @media (max-width: 1237px) {
         #foreword h1 {
             font-size: 3.6rem;
         }
@@ -247,7 +248,8 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 80%;
+        width: 85%;
+        max-width: 1300px;
         gap: 15px;
     }
 
@@ -265,6 +267,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     .services-container span {
         margin-top: 20px;
         font-size: 1.1rem;
+        text-align: center;
     }
 
     #products {
