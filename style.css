@@ -24,6 +24,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-family: "Ubuntu", sans-serif;
         font-size: 20px;
         font-weight: 450;
+        background-color: #fcf3cf;
     }
 
     #header {
@@ -70,7 +71,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     #navbar .navbar-menu:hover,
     #navbar .navbar-menu.active {
         color: #d6bb80;
-        font-size: 1.2rem;
+        /* font-size: 1.2rem; */
     }
 
     #navbar .navbar-menu.active:after,
@@ -98,7 +99,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .bi-type-bold {
-        stroke: white;
+        stroke: #fcf3cf;
         stroke-width: 1.3px;
     }
 
@@ -115,7 +116,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     #cart-container:hover {
-        background-color: #ffffff;
+        background-color: #d6bb80;
     }
 
     #cart-container:hover .bi-type-bold {
@@ -129,7 +130,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         justify-content: center;
         align-items: center;
         /* height: 600px; */
-        height: 87vh;
+        height: 89vh;
     }
 
     #foreword {
@@ -229,20 +230,24 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         rotate(6deg);
     }
 
-    #button-foreword {
-        width: 100px;
+    button {
+        width: 150px;
         padding: 10px;
         border-radius: 12px;
         background-color: #444444;
-        color: white;
+        color: #fcf3cf;
         font-weight: 600;
         border: 0;
         transition: 0.3s ease;
     }
 
-    #button-foreword:hover {
-        background-color: white;
+    button:hover {
+        background-color: #d6bb80;
         color: #444444;
+    }
+
+    #foreword button {
+        font-size: 1rem;
     }
 
     #services {
@@ -252,7 +257,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         justify-content: center;
         align-items: center;
         height: 350px;
-        /* outline: 1px solid #444444; */
+        outline: 1px solid #444444;
     }
 
     #services-main-container {
@@ -265,14 +270,14 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .services-container {
-        outline: 1px solid white;
+        outline: 1px solid #fcf3cf;
         height: 250px;
         padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: white;
+        color: #fcf3cf;
     }
 
     .services-container span {
@@ -287,7 +292,72 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         display: flex;
         justify-content: center;
         align-items: center;
-        height: auto;
+        flex-direction: column;
+    }
+
+    #products h2 {
+        margin: 100px 0 20px 0;
+        font-size: 3rem;
+        color: #444444;
+    }
+
+    #products-container {
+        outline: 1px solid #444444;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1300px;
+        padding: 10px;
+        gap: 10px;
+        margin-bottom: 1px;
+    }
+
+    .column-products {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .card-products {
+        outline: 1px solid #444444;
+        width: 100%;
+        height: 500px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: #444444;
+        overflow: hidden;
+    }
+
+    .card-products img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+
+    #button-add-cart {
+        margin: 10px 10px;
+        width: 95%;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+
+    #button-see-more {
+        margin: 20px 0;
+        font-size: 1rem;
+    }
+
+
+    #about {
+        margin-top: 100px;
     }
 }
 
