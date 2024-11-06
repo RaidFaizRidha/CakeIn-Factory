@@ -24,12 +24,12 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-family: "Ubuntu", sans-serif;
         font-size: 20px;
         font-weight: 450;
-        background-color: #fcf3cf;
+        background-color: #fff8de;
     }
 
     #header {
         padding: 0 10px;
-        background-color: #fcf3cf;
+        background-color: #fff8de;
         /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); */
         display: flex;
         align-items: center;
@@ -70,7 +70,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #navbar .navbar-menu:hover,
     #navbar .navbar-menu.active {
-        color: #d6bb80;
+        color: #d3622d;
         /* font-size: 1.2rem; */
     }
 
@@ -79,7 +79,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         content: "";
         width: 30%;
         height: 2px;
-        background: #d6bb80;
+        background: #d3622d;
         position: absolute;
         bottom: -4px;
         left: 20px;
@@ -99,7 +99,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .bi-type-bold {
-        stroke: #fcf3cf;
+        stroke: #fff8de;
         stroke-width: 1.3px;
     }
 
@@ -116,16 +116,16 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     #cart-container:hover {
-        background-color: #d6bb80;
+        background-color: #d3622d;
     }
 
     #cart-container:hover .bi-type-bold {
-        stroke: #444444;
+        stroke: #fff8de;
     }
 
     #hero {
         overflow: hidden;
-        background-color: #fcf3cf;
+        background-color: #fff8de;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -199,7 +199,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     #slice-cake-in {
         width: 160px;
         height: 200px;
-        background-color: #d6bb80;
+        background-color: #d3622d;
         position: absolute;
         left: -10px;
         top: 17px;
@@ -216,7 +216,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     #full-cake-in {
         width: 160px;
         height: 200px;
-        background-color: #d6bb80;
+        background-color: #d3622d;
         position: absolute;
         top: -10px;
         left: 10px;
@@ -239,24 +239,26 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         padding: 10px;
         border-radius: 12px;
         background-color: #444444;
-        color: #fcf3cf;
-        font-weight: 600;
+        color: #fff8de;
+        font-weight: bold;
         border: 0;
         transition: 0.3s ease;
+        cursor: pointer;
     }
 
     button:hover {
-        background-color: #d6bb80;
-        color: #444444;
+        background-color: #d3622d;
+        color: #fff8de;
     }
 
     #foreword button {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        padding: 20px;
     }
 
     #services {
         overflow: hidden;
-        background-color: #d6bb80;
+        background-color: #d3622d;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -274,14 +276,14 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .services-container {
-        outline: 1px solid #fcf3cf;
+        outline: 1px solid #fff8de;
         height: 250px;
         padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #fcf3cf;
+        color: #fff8de;
     }
 
     .services-container span {
@@ -292,7 +294,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #products {
         overflow: hidden;
-        background-color: #fcf3cf;
+        background-color: #fff8de;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -305,63 +307,201 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         color: #444444;
     }
 
+    #category {
+        margin-bottom: 10px;
+        width: 80%;
+        outline: 1px solid #444444;
+        max-width: 1300px;
+    }
+
+    #category-container {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+        margin: 10px;
+        list-style: none;
+    }
+
+    #category-container li button {
+        width: fit-content;
+        background-color: transparent;
+        font-size: 1.1rem;
+        color: #444444;
+        transition: 0.3s ease;
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        margin: 10px;
+    }
+
+    #category-container .category-menu:hover,
+    #category-container .category-menu.active-category {
+        color: #d3622d;
+    }
+
+    #category-container .category-menu.active-category:after,
+    #category-container .category-menu:hover::after {
+        content: "";
+        width: 50%;
+        height: 2px;
+        background: #d3622d;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        animation: category 0.3s ease;
+    }
+
+    @keyframes category {
+        from {
+            transform: 
+            translateX(-30px);
+        }
+
+        to {
+            transform: 
+            translateX(0);
+        }
+    }
+
     #products-container {
         outline: 1px solid #444444;
         width: 80%;
+        height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         max-width: 1300px;
         padding: 10px;
-        gap: 10px;
         margin-bottom: 1px;
     }
 
     .column-products {
         width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        justify-content: start;
+        align-items: start;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
     }
 
     .card-products {
         outline: 1px solid #444444;
-        width: 100%;
+        width: auto;
         height: 500px;
-        padding: 0;
-        display: flex;
+        padding: 10px;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        align-items: start;
         color: #444444;
         overflow: hidden;
+        display: none;
+    }
+
+    .show {
+        display: flex;
     }
 
     .card-products img {
         width: 100%;
-        height: 80%;
+        height: 74%;
         object-fit: cover;
+        background-color: #e9c0ad;
+    }
+
+    .products-title-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        width: 100%;
+        margin: 20px 0 auto 0;
+    }
+
+    h3 {
+        font-size: 1rem;
+        width: 75%;
+    }
+
+    .products-title-price span{
+        font-size: 1rem;
     }
 
     #button-add-cart {
-        margin: 10px 10px;
-        width: 95%;
+        margin: 10px 0;
+        width: 100%;
         border-radius: 8px;
         text-transform: uppercase;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        background-color: #d3622d;
+        color:#fff8de;
+    }
+
+    #button-add-cart:hover {
+        background-color: #444444;
+        color: #fff8de;
     }
 
     #button-see-more {
-        margin: 20px 0;
-        font-size: 1rem;
+        display: block;
+        margin: 20px auto;
+        font-size: 0.9rem;
+        padding: 20px;
     }
 
 
     #about {
         margin-top: 100px;
+        overflow: hidden;
+        background-color: #e9c0ad;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 350px;
+        outline: 1px solid #444444;
+    }
+
+    #about-main-container {
+        display: flex;
+        width: 80%;
+        max-width: 1300px;
+        justify-content: start;
+        align-items: center;
+    }
+
+    #about-image {
+        width: 250px;
+        height: 270px;
+        background-color: #d3622d;
+        border-radius: 10px;
+        outline: 1px solid #444444;
+        position: relative;
+        margin-right: 100px;
+    }
+
+    #about-image img {
+        height: 400px;
+        width: 650px;
+        position: absolute;
+        left: -10px;
+        bottom: -50px;
+        -webkit-transform: scaleX(-1);
+        transform: 
+        scaleX(-1);
+    }
+
+    #about-desc {
+        width: 70%;
+        color: #444444;
+    }
+
+    #desc {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+
+    .highlight-desc {
+        font-size: larger;
+        color: #d3622d;
     }
 }
 
