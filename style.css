@@ -141,13 +141,13 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         top: 100%;
         right: -100%;
         width: 35rem;
-        height: 100vh;
+        height: 88vh;
         padding: 0 1.5rem;
         transition: 0.3s;
         background-color: #e9c0ad;
         outline: 1px solid #444444;
         color: #444444;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .cart-page.active {
@@ -636,6 +636,10 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     .highlight-desc {
         font-size: larger;
         color: #d3622d;
+    }
+
+    #footer {
+        
     }
 }
 
