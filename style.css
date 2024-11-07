@@ -25,6 +25,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-size: 20px;
         font-weight: 450;
         background-color: #fff8de;
+        overflow-x: hidden;
     }
 
     #header {
@@ -37,7 +38,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         position: sticky;
         top: 0;
         border-bottom: 1px solid #444444;
-        overflow: hidden;
         z-index: 1;
     }
 
@@ -103,7 +103,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         stroke-width: 1.3px;
     }
 
-    #cart-container {
+    #cart-container-button {
         height: 50px;
         width: 50px;
         margin-left: 50px;
@@ -113,15 +113,149 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         justify-content: center;
         align-items: center;
         transition: 0.3s ease;
+        position: relative;
     }
 
-    #cart-container:hover {
+    #cart-container-button:hover {
         background-color: #d3622d;
     }
 
-    #cart-container:hover .bi-type-bold {
+    #cart-container-button:hover .bi-type-bold {
         stroke: #fff8de;
     }
+
+    #quantity-badge {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        font-size: 0.8rem;
+        bottom: 0;
+        text-align: center;
+        color: #fff8de;
+        background-color: #d3622d;
+        border-radius: 50%;
+    }
+
+    .cart-page {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 35rem;
+        height: 100vh;
+        padding: 0 1.5rem;
+        transition: 0.3s;
+        background-color: #e9c0ad;
+        outline: 1px solid #444444;
+        color: #444444;
+        overflow-y: scroll;
+    }
+
+    .cart-page.active {
+        right: 0;
+    }
+
+    .cart-page h2 {
+        margin: 2rem 0;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .cart-page .cart-item {
+        position: relative;
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px dashed #444444;
+    }
+
+    .cart-page img {
+        height: 4rem;
+        border-radius: 50%;
+        outline: 1px solid #444444;
+    }
+
+    .cart-page h3 {
+        font-size: 1.2rem;
+        padding-bottom: 0.5rem;
+        color: #474747;
+    }
+
+    .cart-page .item-price {
+        font-size: 1rem;
+    }
+
+    .cart-page .cart-item #add,
+    .cart-page .cart-item #remove {
+        width: auto;
+        display: inline-block;
+        padding: 2px 5px;
+        cursor: pointer;
+        margin: 0 8px;
+        background-color: #444444;
+        color: #e9c0ad;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 7px;
+    }
+
+    .cart-page .cart-item #add:hover,
+    .cart-page .cart-item #remove:hover {
+        background-color: #d3622d;
+    }
+
+    .cart-page h4 {
+        font-size: 1.6rem;
+        margin-top: -1rem;
+    }
+
+    .form-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-top: 1px dashed #444444;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
+    .form-container h5 {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .form-container form {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-container label {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .form-container span {
+        text-align: right;
+    }
+
+    .form-container input {
+        background-color: #fff8de;
+        padding: 5px;
+        font-size: 1rem;
+        width: 70%;
+    }
+
+    .form-container .checkout-button {
+        margin: 1rem auto;
+        cursor: pointer;
+        font-size: 0.9rem;
+        padding: 20px;
+    }
+/* header section end */
+
+/* hero section start */
 
     #hero {
         overflow: hidden;

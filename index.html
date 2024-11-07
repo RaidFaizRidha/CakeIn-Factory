@@ -9,7 +9,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-    <section id="header">
+    <section id="header" x-data>
         <a class="logo" href="./index.html"><img src="./assets/image/logo.png" alt="" height="100"></a>
         <div>
             <ul id="navbar">
@@ -20,13 +20,57 @@
                 <li><a class="navbar-menu" href="contact.html">Contact</a></li>
             </ul>
         </div>
-        <div id="cart-container">
-            <a id="cart" href="cart.html">
+        <a href="cart.html" id="cart-container-button">
+            <div id="cart">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" class="bi bi-bag bi-type-bold" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
                 </svg>
-            </a>
-        </div>  
+                <span id="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+            </div>
+        </a>
+        <div class="cart-page">
+            <h2>Your Cart</h2>
+            <template x-for="(item, index) in $store.cart.items" x-keys="index">
+                <div class="cart-item">
+                    <img :src="`./assets/image/${item.img}`" :alt="item.name">
+                    <div class="item-detail">
+                        <h3 x-text="item.name">sdasdasd</h3>
+                        <div class="item-price">
+                            <span x-text="rupiah(item.price)"></span> &times;
+                            <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
+                            <span x-text="item.quantity">1</span>
+                            <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
+                            <span x-text="rupiah(item.total)"></span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Cart is empty</h4>
+            <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
+
+            <div class="form-container">
+                <form action="" id="checkoutform" x-show="$store.cart.items.length">
+                    <h5> Customer Detail</h5>
+
+                    <label for="name">
+                        <span>Name</span>
+                        <input type="text" name="name" id="name" required>
+                    </label>
+
+                    <label for="email">
+                        <span>Email</span>
+                        <input type="email" name="email" id="email" required>
+                    </label>
+
+                    <label for="phone">
+                        <span>Phone</span>
+                        <input type="number" name="phone" id="phone" autocomplete="off" required>
+                    </label>
+
+                    <button class="checkout-button" type="submit" id="checkout-button" value="Checkout">CHECKOUT</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <section id="hero">
@@ -99,9 +143,9 @@
                         <img :src="`assets/image/${item.img}`" :alt="item.name">
                         <div class="products-title-price">
                             <h3 x-text="item.name"></h3>
-                            <span x-text="item.price"></span>
+                            <span x-text="rupiah(item.price)"></span>
                         </div>
-                        <button id="button-add-cart">Add to cart</button>
+                        <button id="button-add-cart" @click="$store.cart.add(item)">Add to cart</button>
                     </div>
                 </template>   
             </div>
@@ -126,9 +170,12 @@
     </section>
 
     <section id="footer">
-        
+
     </section>
 
+<!-- Modal Box Item Detail st-->
+
+<!-- Modal Box Item Detail end-->
 <script src="script.js"></script>
 </body>
 </html>

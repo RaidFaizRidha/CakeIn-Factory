@@ -1,3 +1,18 @@
+// toggle class active for cart page start
+const shoppingCart = document.querySelector('.cart-page');
+document.querySelector('#cart-container-button').onclick = (e) => {
+    shoppingCart.classList.toggle('active');
+    e.preventDefault();
+};
+
+const sc = document.querySelector('#cart-container-button')
+document.addEventListener('click', function(e) {
+    if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
+        shoppingCart.classList.remove('active');
+    };
+});
+// toggle class active for cart page end
+
 // highlight category start
 var btnContainer = document.getElementById("category-container");
 var btns = btnContainer.getElementsByClassName("category-menu");
