@@ -1,3 +1,4 @@
+
 // toggle class active for cart page start
 const shoppingCart = document.querySelector('.cart-page');
 document.querySelector('#cart-container-button').onclick = (e) => {
@@ -5,7 +6,7 @@ document.querySelector('#cart-container-button').onclick = (e) => {
     e.preventDefault();
 };
 
-const sc = document.querySelector('#cart-container-button')
+const sc = document.querySelector('#cart-container-button');
 document.addEventListener('click', function(e) {
     if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
         shoppingCart.classList.remove('active');

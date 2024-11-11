@@ -12,6 +12,10 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     outline: 1px solid green;
 } */
 
+html {
+    scroll-behavior: smooth;
+}
+
 @media only screen and (min-width: 1024px) {
     * {
         margin: 0;
@@ -24,13 +28,14 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-family: "Ubuntu", sans-serif;
         font-size: 20px;
         font-weight: 450;
-        background-color: #fff8de;
+        background-color: rgb(244, 244, 246);
         overflow-x: hidden;
+        color: #444444;
     }
 
     #header {
         padding: 0 10px;
-        background-color: #fff8de;
+        background-color: #ffffff;
         /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); */
         display: flex;
         align-items: center;
@@ -69,12 +74,12 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     #navbar .navbar-menu:hover,
-    #navbar .navbar-menu.active {
+    #navbar .navbar-menu.actived {
         color: #d3622d;
         /* font-size: 1.2rem; */
     }
 
-    #navbar .navbar-menu.active:after,
+    #navbar .navbar-menu.actived:after,
     #navbar .navbar-menu:hover::after {
         content: "";
         width: 30%;
@@ -99,7 +104,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .bi-type-bold {
-        stroke: #fff8de;
+        stroke: #ffffff;
         stroke-width: 1.3px;
     }
 
@@ -121,7 +126,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     #cart-container-button:hover .bi-type-bold {
-        stroke: #fff8de;
+        stroke: #ffffff;
     }
 
     #quantity-badge {
@@ -131,7 +136,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-size: 0.8rem;
         bottom: 0;
         text-align: center;
-        color: #fff8de;
+        color: #ffffff;
         background-color: #d3622d;
         border-radius: 50%;
     }
@@ -142,9 +147,9 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         right: -100%;
         width: 35rem;
         height: 88.9vh;
-        padding: 0 1.5rem;
+        padding: 0;
         transition: 0.3s;
-        background-color: #e9c0ad;
+        background-color: #ffffff;
         outline: 1px solid #444444;
         color: #444444;
         overflow-y: auto;
@@ -154,15 +159,25 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         right: 0;
     }
 
+    .cart-page #cart-title {
+        position: sticky;
+        top: 0;
+        display: block;
+        background-color: rgb(244, 244, 246);
+        z-index: 2;
+        width: 100%;
+        border-bottom: 1px solid #444444;
+    }
+
     .cart-page h2 {
-        margin: 2rem 0;
+        padding: 2rem 0;
         font-size: 3rem;
         text-align: center;
     }
 
     .cart-page .cart-item {
         position: relative;
-        margin: 2rem 0;
+        margin: 2rem 1.5rem;
         display: flex;
         align-items: center;
         gap: 1.5rem;
@@ -177,6 +192,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .cart-page h3 {
+        
         font-size: 1.2rem;
         padding-bottom: 0.5rem;
         color: #474747;
@@ -194,7 +210,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         cursor: pointer;
         margin: 0 8px;
         background-color: #444444;
-        color: #e9c0ad;
+        color: #ffffff;
         font-weight: bold;
         font-size: 1.1rem;
         border-radius: 7px;
@@ -206,15 +222,17 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .cart-page h4 {
+        margin: 0 1.5rem;
         font-size: 1.6rem;
-        margin-top: -1rem;
+        margin-top: -2rem;
+        padding: 1rem;
+        border-bottom: 1px dashed #444444;
     }
 
     .form-container {
         width: 100%;
         display: flex;
         justify-content: center;
-        border-top: 1px dashed #444444;
         margin-top: 1rem;
         padding: 1rem;
     }
@@ -241,7 +259,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .form-container input {
-        background-color: #fff8de;
+        background-color: rgb(244, 244, 246);
         padding: 5px;
         font-size: 1rem;
         width: 70%;
@@ -259,7 +277,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #hero {
         overflow: hidden;
-        background-color: #fff8de;
+        background-color: rgb(244, 244, 246);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -373,7 +391,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         padding: 10px;
         border-radius: 12px;
         background-color: #444444;
-        color: #fff8de;
+        color: rgb(244, 244, 246);
         font-weight: bold;
         border: 0;
         transition: 0.3s ease;
@@ -382,7 +400,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     button:hover {
         background-color: #d3622d;
-        color: #fff8de;
+        color: rgb(244, 244, 246);
     }
 
     #foreword button {
@@ -410,14 +428,14 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .services-container {
-        outline: 1px solid #fff8de;
+        outline: 1px solid rgb(244, 244, 246);
         height: 250px;
         padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #fff8de;
+        color: rgb(244, 244, 246);
     }
 
     .services-container span {
@@ -428,7 +446,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #products {
         overflow: hidden;
-        background-color: #fff8de;
+        background-color: rgb(244, 244, 246);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -446,6 +464,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         width: 80%;
         outline: 1px solid #444444;
         max-width: 1300px;
+        background-color: #ffffff;
     }
 
     #category-container {
@@ -508,6 +527,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         max-width: 1300px;
         padding: 10px;
         margin-bottom: 1px;
+        background-color: #ffffff;
     }
 
     .column-products {
@@ -551,7 +571,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         margin: 20px 0 auto 0;
     }
 
-    h3 {
+    .products-title-price h3 {
         font-size: 1rem;
         width: 75%;
     }
@@ -567,12 +587,12 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         text-transform: uppercase;
         font-size: 0.9rem;
         background-color: #d3622d;
-        color:#fff8de;
+        color:rgb(244, 244, 246);
     }
 
     #button-add-cart:hover {
         background-color: #444444;
-        color: #fff8de;
+        color: rgb(244, 244, 246);
     }
 
     #button-see-more {
@@ -584,7 +604,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
 
     #about {
-        margin-top: 100px;
+        margin-top: 150px;
         overflow: hidden;
         background-color: #e9c0ad;
         display: flex;
@@ -638,9 +658,258 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         color: #d3622d;
     }
 
-    #footer {
-        
+    #subscription {
+        overflow: hidden;
+        background-color: rgb(244, 244, 246);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
+
+    .subscription-container {
+        display: flex;
+        width: 80%;
+        max-width: 1300px;
+        margin: 0 0 1px 0;
+        outline: 1px solid #444444;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+
+    #subscription-title {
+        margin: 100px 0 20px 0;
+        font-size: 3rem;
+        color: #444444;
+    }
+
+    #location {
+        width: 60%;
+        margin-right: 20px;
+    }
+
+    .subscription-form {
+        width: 40%;
+    }
+
+    .subscription-form h2 {
+        margin: 0;
+        font-size: 2.5rem;
+
+    }
+
+    .subscription-form #subs-desc {
+        font-size: 1rem;
+    }
+
+    .subscription-form form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        margin-top: 20px;
+    }
+
+    .input {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .input label {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.3rem;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .subscription-form input {
+        width: 100%;
+        background-color: rgb(244, 244, 246);
+        height: 60px;
+        font-size: 1.3rem;
+        border: rgb(244, 244, 246);
+    }
+    
+    .subscription-form button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        padding: 20px;
+    }
+
+    #order-now-footer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-direction: column;
+        width: 80%;
+        max-width: 1300px;
+        border-top: 1px solid #444444;
+        margin-top: 2rem;
+    }
+
+    #order-now-footer h3 {
+        text-align: center;
+        margin: 100px 0 20px 0;
+        font-size: 3rem;
+        color: #444444;
+    }
+
+    #order-now-footer button {
+        padding: 20px;
+    }
+
+    #order-now-footer a {
+        text-decoration: none;
+        color: rgb(244, 244, 246);
+    }
+
+    /* #footer {
+        overflow: hidden;
+        background-color: #d3622d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 150px;
+        padding: 20px;
+        color: #444444;
+    }
+
+    #footer .footer-container {
+        width: 80%;
+        max-width: 1300px;
+    }
+
+    #footer .top-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        border-bottom: 1px solid #474747;
+    }*/
+
+    #footer {
+        margin-top: 100px;
+        background-color: #d3622d;
+        color: rgb(244, 244, 246);
+        font-family: Arial, sans-serif;
+        padding: 40px 20px;
+      }
+      
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      
+      .footer-section {
+        flex: 1 1 200px;
+        margin: 20px;
+        text-align: center;
+      }
+      
+      .footer-section h3 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+      }
+      
+      .footer-section p {
+        font-size: 0.9em;
+        line-height: 1.6;
+      }
+      
+      .footer-section ul {
+        list-style: none;
+      }
+      
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+      
+      .footer-section ul li a {
+        text-decoration: none;
+        color: rgb(244, 244, 246);
+        font-size: 0.9em;
+        transition: color 0.3s;
+      }
+      
+      .footer-section ul li a:hover {
+        color: #e9c0ad;
+      }
+
+      .about {
+        text-align: left;
+      }
+
+      .card {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 10px 0;
+        gap: 20px;
+    }
+      
+    /* for all social containers*/
+    .socialContainer {
+        height: 50px;
+        width: 50px;
+        background-color: #444444;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+      
+    .socialSvg {
+        width: 20px;
+        height: 20px;
+        fill: rgb(244, 244, 246);
+    }
+
+    .socialContainer:hover {
+        background-color: #e9c0ad;
+    }
+      
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin: 10px 0;
+      }
+      
+      .social-icons a:hover {
+        color: #e9c0ad;
+      }
+      
+      .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.8em;
+        padding-top: 15px;
+        border-top: 1px solid rgba(244, 244, 246, 0.3);
+      }
+      
+      .footer-bottom p {
+        color: rgb(244, 244, 246);
+      }
+      
+      .footer-section.about p {
+        border-left: 3px solid #e9c0ad;
+        padding-left: 10px;
+        font-style: italic;
+      }
+      
 }
 
 /* Medium devices such as tablets (768px and up) */

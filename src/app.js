@@ -1,3 +1,23 @@
+const navLinks = document.querySelectorAll('.navbar-menu');
+const sections = document.querySelectorAll('section');
+
+let currentSection = 'home';
+window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+        if (window.scrollY >= (section.offsetTop - section.clientHeight / 3)) {
+            currentSection= section.id;
+        }
+    });
+
+    navLinks.forEach(navLink => {
+        if (navLink.href.includes(currentSection)) {
+            document.querySelector('.actived').classList.remove('actived');
+            navLink.classList.add('actived');
+        }
+    });
+});
+
+//for navbar end
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('products', () => ({
