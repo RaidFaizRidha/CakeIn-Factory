@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <form id="contactForm">
         <input type="text" id="name" placeholder="Your Name" required />
         <input type="email" id="email" placeholder="Your Email" required />
         <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit" onclick="sendMail();">Send</button>
+        <button type="submit">Send</button>
     </form>
     <div id="response"></div>
 
-    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         // Initialize EmailJS with your public key
         emailjs.init("6IKJHtfLS6u4UaUSX");  // Replace with your Public Key
 
-        function sendMail() {
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
             
             const name = document.querySelector('#name').value;
             const email = document.querySelector('#email').value;
@@ -44,7 +44,7 @@
                     console.error('Error:', error);
                     document.getElementById('response').innerText = 'Error sending message.';
                 });
-        };
+        });
     </script>
 </body>
 </html>
