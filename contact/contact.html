@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <div id="response"></div>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your public key
+        emailjs.init("6IKJHtfLS6u4UaUSX");  // Replace with your Public Key
+
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const templateParams = {
+                name: name,
+                email: email,
+                message: message
+            };
+
+            emailjs.send('service_ao2xhsm', 'template_qxag0wm', templateParams)
+                .then((response) => {
+                    console.log('Success:', response);
+                    document.getElementById('response').innerText = 'Message sent successfully!';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    document.getElementById('response').innerText = 'Error sending message.';
+                });
+        });
+    </script>
+</body>
+</html>
