@@ -32,7 +32,10 @@
                 message: message
             };
 
-            emailjs.send('service_ao2xhsm', 'template_qxag0wm', templateParams)
+            const serviceId = 'service_ao2xhsm';
+            const templateId = 'template_qxag0wm';
+
+            emailjs.send(serviceId, templateId, templateParams)
                 .then((response) => {
                     console.log('Success:', response);
                     document.getElementById('response').innerText = 'Message sent successfully!';
