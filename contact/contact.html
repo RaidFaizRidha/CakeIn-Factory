@@ -10,7 +10,7 @@
         <input type="text" id="name" placeholder="Your Name" required />
         <input type="email" id="email" placeholder="Your Email" required />
         <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
+        <button type="submit" onclick="sendMail();">Send</button>
     </form>
     <div id="response"></div>
 
@@ -19,12 +19,12 @@
         // Initialize EmailJS with your public key
         emailjs.init("6IKJHtfLS6u4UaUSX");  // Replace with your Public Key
 
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
+        function sendMail(event) {
             event.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const name = document.querySelector('#name').value;
+            const email = document.querySelector('#email').value;
+            const message = document.querySelector('#message').value;
 
             const templateParams = {
                 name: name,
@@ -44,7 +44,7 @@
                     console.error('Error:', error);
                     document.getElementById('response').innerText = 'Error sending message.';
                 });
-        });
+        };
     </script>
 </body>
 </html>
