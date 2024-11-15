@@ -21,14 +21,27 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('products', () => ({
+        open: false,
+        selectedItem: {},
+
         items: [
-            { id: 1, name: "CakeIn's Signature Cheesecake (11-inch)", img: "cakeslice.png", price: 20000, class: "cheesecake show"},
-            { id: 2, name: "CakeIn's Signature Cheesecake (4-inch)", img: "cakeslice.png", price: 20000, class: "cheesecake show" },
-            { id: 3, name: "Basque Burnt Cheesecake", img: "cakeslice.png", price: 20000, class: "cheesecake show"},
-            { id: 4, name: "Cream Bun", img: "cakeslice.png", price: 20000, class: "buns show"},
-            { id: 5, name: "Milk Bun", img: "cakeslice.png", price: 20000, class: "buns show"},
-            { id: 6, name: "Nutella Brownies", img: "cakeslice.png", price: 20000, class: "brownies show"}
-        ]
+            { id: 1, name: "CakeIn's Signature Cheesecake (11-inch)", img: "cakeslice.png", price: 20000, class: "cheesecake show", description: "A classic cheesecake with a rich and creamy texture."},
+            { id: 2, name: "CakeIn's Signature Cheesecake (4-inch)", img: "cakeslice.png", price: 20000, class: "cheesecake show", description: "A smaller version of our signature cheesecake." },
+            { id: 3, name: "Basque Burnt Cheesecake", img: "cakeslice.png", price: 20000, class: "cheesecake show", description: "A unique burnt cheesecake with a rich, caramelized top."},
+            { id: 4, name: "Cream Bun", img: "cakeslice.png", price: 20000, class: "buns show", description: "A soft, fluffy bun filled with rich cream filling."},
+            { id: 5, name: "Milk Bun", img: "cakeslice.png", price: 20000, class: "buns show", description: "A deliciously soft bun with a subtle milk flavor."},
+            { id: 6, name: "Nutella Brownies", img: "cakeslice.png", price: 20000, class: "brownies show", description: "Chewy brownies with a generous swirl of Nutella."}
+        ],
+
+        openModal(item) {
+            this.selectedItem = item;
+            this.open = true;         
+        },
+
+        closeModal() {
+            this.open = false;
+            this.selectedItem = {};
+        }
     }));
 
     Alpine.store('cart', {
@@ -78,6 +91,7 @@ document.addEventListener('alpine:init', () => {
             }
         },
     });
+
 });
 
 // convert to rupiah

@@ -12,10 +12,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     outline: 1px solid green;
 } */
 
-html {
-    scroll-behavior: smooth;
-}
-
 @media only screen and (min-width: 1024px) {
     * {
         margin: 0;
@@ -555,6 +551,12 @@ html {
         color: #444444;
         overflow: hidden;
         display: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .card-products:hover {
+        outline: 2px solid #d3622d;
     }
 
     .show {
@@ -586,18 +588,33 @@ html {
     }
 
     #button-add-cart {
-        margin: 10px 0;
+        font-size: 0.9rem;
         width: 100%;
         border-radius: 8px;
-        text-transform: uppercase;
-        font-size: 0.9rem;
+        text-transform: uppercase;   
         background-color: #d3622d;
-        color:rgb(244, 244, 246);
     }
 
     #button-add-cart:hover {
-        background-color: #444444;
-        color: rgb(244, 244, 246);
+        background-color: #474747;
+    }
+    
+    #button-view {
+        border-radius: 8px;
+        background-color: #d3622d;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: 3px;
+        min-width: 40px;
+        width: 10%;
+    }
+
+    #button-view svg {
+        stroke: #ffffff;
+    }
+
+    #button-view:hover {
+        background-color: #e9c0ad;
     }
 
     #button-see-more {
@@ -744,7 +761,7 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 20px;
     }
 
@@ -771,34 +788,10 @@ html {
     }
 
     #order-now-footer a {
+        font-size: 0.9rem;
         text-decoration: none;
         color: rgb(244, 244, 246);
     }
-
-    /* #footer {
-        overflow: hidden;
-        background-color: #d3622d;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 150px;
-        padding: 20px;
-        color: #444444;
-    }
-
-    #footer .footer-container {
-        width: 80%;
-        max-width: 1300px;
-    }
-
-    #footer .top-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        display: flex;
-        border-bottom: 1px solid #474747;
-    }*/
 
     #footer {
         margin-top: 100px;
@@ -914,7 +907,104 @@ html {
         padding-left: 10px;
         font-style: italic;
       }
+
+      /* modal box */
+      .modal {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.7);
+        align-items: center;
+      }
       
+      .modal-container {
+        position: relative;
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 1.2rem;
+        border: 1px solid #666;
+        width: 80%;
+        max-width: 1000px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        animation: animateModal 0.5s;
+      }
+
+      @keyframes animateModal  {
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+
+        to {
+            top: 0;
+            opacity: 1;
+        }
+      }
+    
+      .modal-container .close-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+      }
+    
+      .modal-content {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+      }
+
+      .modal-content img{
+        height: 20rem;
+        margin-right: 2rem;
+        background-color: #e9c0ad;
+      }
+
+      .modal-content p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        margin: 1.2rem 0;
+      }
+
+     .product-content {
+        width: 100%;
+        position: relative;
+     }
+
+     .product-content span {
+        position: absolute;
+        bottom: 3rem;
+        left: 0;
+     }
+
+     #button-add-cart-detailbox {
+        font-size: 0.9rem;
+        width: 100%;
+        border-radius: 8px;
+        text-transform: uppercase;   
+        background-color: #d3622d;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+     }
+
+     #button-add-cart-detailbox:hover {
+        background-color: #474747;
+    }
+
+     /* tablet */
+     @media (max-width: 758px) {
+        .modal-content {
+            flex-wrap: wrap;
+        }
+     }
 }
 
 /* Medium devices such as tablets (768px and up) */

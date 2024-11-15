@@ -6,11 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="src/app.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
     <section id="header" x-data>
-        <a class="logo" href="./index.html"><img src="./assets/image/logo.png" alt="" height="100"></a>
+        <a class="logo" href="./index.html"><img src="./assets/image/WhatsApp_Image_2024-11-12_at_10.03.30-removebg-preview.png" alt="" width="115" height="100"></a>
         <div>
             <ul id="navbar">
                 <li><a class="navbar-menu actived" href="#hero">Home</a></li>
@@ -141,18 +140,44 @@
         <div id="products-container">
             <div class="column-products">
                 <template x-for="(item, index) in items" x-key="index">
-                    <div :class="`card-products ${item.class}`">
+                    <a href="#" :class="`card-products ${item.class}`" @click.prevent="openModal(item)">
                         <img :src="`assets/image/${item.img}`" :alt="item.name">
                         <div class="products-title-price">
                             <h3 x-text="item.name"></h3>
                             <span x-text="rupiah(item.price)"></span>
-                        </div>
+                        </div>    
                         <button id="button-add-cart" @click="$store.cart.add(item)">Add to cart</button>
-                    </div>
-                </template>   
+                    </a>
+                </template>
             </div>
             <button id="button-see-more">SEE MORE</button>
         </div>
+        <!-- Modal Box Item Detail st-->
+
+        <div class="modal" id="item-detail-modal" x-show="open" @keydown.escape.window="closeModal">    
+            <div class="modal-container" @click.outside="closeModal">
+                <a href="#" class="close-icon" @click.prevent="closeModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </a>
+                <template x-if="open">
+                    <div class="modal-content">
+                        <img :src="`./assets/image/${selectedItem.img}`" :alt="selectedItem.name">
+                        <div class="product-content">
+                            <h3 x-text="selectedItem.name"></h3>
+                            <p x-text="selectedItem.description"></p>
+                            <span x-text="rupiah(selectedItem.price)"></span>
+                            <button id="button-add-cart-detailbox" @click="$store.cart.add(selectedItem)">Add to cart</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- Modal Box Item Detail end-->
     </section>
 
     <section id="about">
@@ -255,11 +280,9 @@
         <div class="footer-bottom">
           <p>&copy; 2024 CakeIn Factory | Cake made with ❤️ by CakeIn Factory</p>
         </div>
-      </section> 
+    </section>
 
-<!-- Modal Box Item Detail st-->
-
-<!-- Modal Box Item Detail end-->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
