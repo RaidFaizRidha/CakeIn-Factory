@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">  
     <script defer src="src/app.js"></script>
 </head>
 <body>
@@ -21,57 +21,130 @@
         </div>
         <button id="cart-container-button">
             <div id="cart">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" class="bi bi-bag bi-type-bold" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentcolor" class="bi bi-bag bi-type-bold" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
                 </svg>
                 <span id="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
             </div>
         </button>
-        <div class="cart-page">
-            <div id="cart-title">
-                <h2>Your Cart</h2>
-            </div>
-            <template x-for="(item, index) in $store.cart.items" x-keys="index">
-                <div class="cart-item">
-                    <img :src="`./assets/image/${item.img}`" :alt="item.name">
-                    <div class="item-detail">
-                        <h3 x-text="item.name">sdasdasd</h3>
-                        <div class="item-price">
-                            <span x-text="rupiah(item.price)"></span> &times;
-                            <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
-                            <span x-text="item.quantity">1</span>
-                            <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
-                            <span x-text="rupiah(item.total)"></span>
+        <!-- cart-page -->
+        <div class="modal-cart">
+            <div class="cart-page">
+                <div id="cart-title">
+                    <h2>Your Cart</h2>
+                </div>
+                <template x-for="(item, index) in $store.cart.items" x-keys="index">
+                    <div class="cart-item">
+                        <img :src="`./assets/image/${item.img}`" :alt="item.name">
+                        <div class="item-detail">
+                            <h3 x-text="item.name">sdasdasd</h3>
+                            <div class="item-price">
+                                <span x-text="rupiah(item.price)"></span> &times;
+                                <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
+                                <span x-text="item.quantity">1</span>
+                                <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
+                                <span x-text="rupiah(item.total)"></span>
+                            </div>
                         </div>
                     </div>
+                </template>
+                <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Cart is empty</h4>
+                <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
+
+                <div class="form-container">
+                    <form action="" id="checkoutform" x-show="$store.cart.items.length">
+                        <h5> Customer Detail</h5>
+
+                        <label for="name">
+                            <span>Name</span>
+                            <input type="text" name="name" id="name" required>
+                        </label>
+
+                        <label for="email">
+                            <span>Email</span>
+                            <input type="email" name="email" id="email" required>
+                        </label>
+
+                        <label for="phone">
+                            <span>Phone</span>
+                            <input type="number" name="phone" id="phone" autocomplete="off" required>
+                        </label>
+
+                        <button class="checkout-button" type="submit" id="checkout-button" value="Checkout">CHECKOUT</button>
+                    </form>
                 </div>
-            </template>
-            <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Cart is empty</h4>
-            <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
-
-            <div class="form-container">
-                <form action="" id="checkoutform" x-show="$store.cart.items.length">
-                    <h5> Customer Detail</h5>
-
-                    <label for="name">
-                        <span>Name</span>
-                        <input type="text" name="name" id="name" required>
-                    </label>
-
-                    <label for="email">
-                        <span>Email</span>
-                        <input type="email" name="email" id="email" required>
-                    </label>
-
-                    <label for="phone">
-                        <span>Phone</span>
-                        <input type="number" name="phone" id="phone" autocomplete="off" required>
-                    </label>
-
-                    <button class="checkout-button" type="submit" id="checkout-button" value="Checkout">CHECKOUT</button>
-                </form>
             </div>
         </div>
+
+        <!-- dropdown -->
+        <div class="dropdown">
+            <a href="#" id="navbar-dropdown">
+                <div class="dropdown-icon">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="25"  height="25"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="3"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-baseline-density-medium">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 20h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 4h16" />
+                    </svg>
+                </div>
+            </a>
+            <div class="modal-dropdown">
+                <div class="dropdown-page">
+                    <a class="logo" href="./index.html"><img src="./assets/image/WhatsApp_Image_2024-11-12_at_10.03.30-removebg-preview.png" alt="" width="115" height="100"></a>
+                    <ul id="dropdown-menu">
+                        <li><a class="navbar-menu actived" href="#hero">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                            </svg><span>Home</span>
+                        </a></li>
+                        <li><a class="navbar-menu" href="#products">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-cakephp">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 11l8 2c1.361 -.545 2 -1.248 2 -2v-3.8c0 -1.765 -4.479 -3.2 -10.002 -3.2c-5.522 0 -9.998 1.435 -9.998 3.2v2.8c0 1.766 4.478 4 10 4v-3z" />
+                                <path d="M12 14v3l8 2c1.362 -.547 2 -1.246 2 -2v-3c0 .754 -.638 1.453 -2 2l-8 -2z" />
+                                <path d="M2 17c0 1.766 4.476 3 9.998 3l.002 -3c-5.522 0 -10 -1.734 -10 -3.5v3.5z" />
+                                <path d="M2 10v4" />
+                                <path d="M22 10v4" />
+                            </svg><span>Products</span>
+                        </a></li>
+                        <li><a class="navbar-menu" href="#about">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-question">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                <path d="M21 21l-6 -6" />
+                                <path d="M10 13l0 .01" />
+                                <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474" />
+                            </svg><span>About us</span>
+                        </a></li>
+                        <li><a class="navbar-menu" href="./contact/contact.html">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-phone">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                            </svg><span>Contact</span>
+                        </a></li>
+    
+                        <div class="subs-dropdown">
+                            <span>
+                                Don't miss our <br> new product 👉
+                            </span>
+                            <li><a class="navbar-menu" id="subs-dropdown-menu" href="#subscription">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                                    <path d="M3 7l9 6l9 -6" />
+                                </svg>
+                            </a></li>
+                        </div>
+                    </ul>
+                    <span id="dropdown-icon-tag">@CakeIn Factory</span>
+                </div>
+            </div>
+        </div>
+        
+        
     </section>
 
     <section id="hero">
@@ -146,7 +219,7 @@
                             <h3 x-text="item.name"></h3>
                             <span x-text="rupiah(item.price)"></span>
                         </div>    
-                        <button id="button-add-cart" @click="$store.cart.add(item)">Add to cart</button>
+                        <button type="button" id="button-add-cart" x-text="item.buttonText" @click.stop.prevent="$store.cart.add(item), addedText(item)"></button>
                     </a>
                 </template>
             </div>
@@ -170,7 +243,7 @@
                             <h3 x-text="selectedItem.name"></h3>
                             <p x-text="selectedItem.description"></p>
                             <span x-text="rupiah(selectedItem.price)"></span>
-                            <button id="button-add-cart-detailbox" @click="$store.cart.add(selectedItem)">Add to cart</button>
+                            <button id="button-add-cart-detailbox" x-text="selectedItem.buttonText" @click="$store.cart.add(selectedItem), addedText(selectedItem)"></button>
                         </div>
                     </div>
                 </template>

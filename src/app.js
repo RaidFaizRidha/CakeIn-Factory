@@ -35,19 +35,46 @@ document.addEventListener('alpine:init', () => {
 
         openModal(item) {
             this.selectedItem = item;
-            this.open = true;         
+            this.open = true; 
+            this.toggleScroll(true);
         },
 
         closeModal() {
             this.open = false;
             this.selectedItem = {};
-        }
+            this.toggleScroll(false);
+        },
+
+        toggleScroll(disable) {
+            if (disable) {
+                document.body.classList.add('no-scroll')
+            } else {
+                document.body.classList.remove('no-scroll')
+            }
+        },
+
+        init() {
+            this.items.forEach(item => {
+                item.buttonText = 'Add to cart';
+            });
+        },
+ 
+        addedText(item) {
+            item.buttonText = 'Added';
+            
+            setTimeout(() => {
+                item.buttonText = 'Add to cart';
+            }, 800);
+        },
+
     }));
 
     Alpine.store('cart', {
         items: [],
         total: 0,
         quantity: 0,
+        open: false,
+        
         add(newItem) {
             const cartItem = this.items.find((item) => item.id === newItem.id)
             if (!cartItem) {
@@ -90,6 +117,7 @@ document.addEventListener('alpine:init', () => {
                 this.total -= cartItem.price;
             }
         },
+        
     });
 
 });
