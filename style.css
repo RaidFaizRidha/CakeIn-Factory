@@ -166,6 +166,8 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .cart-page {
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 0;
         right: -100%;
@@ -271,8 +273,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .checkout-button {
-        position: absolute;
-        left: 29.7%;
+        align-self: center;
         margin: 2rem 0;
         cursor: pointer;
         font-size: 0.9rem;
@@ -1787,6 +1788,41 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         width: 20rem;
     }
 
+    @media (max-width: 500px) {
+        .cart-page .cart-item {
+            gap: 1rem;
+        }
+
+        .cart-item img {
+            height: 3.5rem;
+        }
+
+        .cart-page {
+            width: 13rem;
+        }
+
+        .item-detail h3 {
+            font-size: 0.9rem;
+        }
+    
+        .item-price span {
+            font-size: 0.8rem;
+        }
+
+        .cart-page .cart-item #add {
+            margin-right: 0;
+        }
+
+        .cart-page .cart-item #remove {
+            margin-left: 0;
+        }
+    }
+
+    .cart-page .cart-item #add,
+    .cart-page .cart-item #remove {
+        font-size: 0.9rem;
+    }
+
     #foreword {
         width: 90%;
     }
@@ -1978,9 +2014,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
             height: 35px;
         }
     }
-
-
-
 }
 
 
