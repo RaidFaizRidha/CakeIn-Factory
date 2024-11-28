@@ -1787,6 +1787,10 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         width: 20rem;
     }
 
+    #foreword {
+        width: 90%;
+    }
+
     #foreword h1 {
         font-size: 3rem;
     }
@@ -1854,29 +1858,31 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     #services {
-        padding: 20px;
+        padding: 10px 0 10px 0;
         height: auto;
     }
 
     #services-main-container {
-        flex-wrap: wrap;
+        width: 90%;
+        justify-content: space-between;
     }
     
     .services-container {
+        width: 100%;
         height: 150px;
-        padding: 10px;
+        padding: 5px;
     }
 
     .services-container svg {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 
     .services-container span {
         font-size: 0.8rem;
     }
 
-    @media (max-width: 572px) {
+    /* @media (max-width: 572px) {
         .services-container {
             width: 150px;
         }
@@ -1886,7 +1892,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         .services-container {
             width: 100px;
         }
-    }
+    } */
 
     @media (max-width: 583px) {
         #category-container li button {
@@ -1896,9 +1902,13 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     @media (max-width: 516px) {
         #category-container {
-            gap: 10px;
+            gap: 5px;
             margin: 0;
         }
+    }
+
+    #category {
+        width: 90%;
     }
 
     .card-products {
@@ -1918,15 +1928,19 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-size: 0.9rem;
     }
 
+    #products-container {
+        width: 90%;
+    }
+
     @media (max-width: 710px) {
         .card-products img {
-        height: 260px;
+            height: 260px;
         }
     }
 
     @media (max-width: 470px) {
         .card-products {
-        height: 350px;
+            height: 400px;
         }
     }
 
