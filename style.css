@@ -1858,28 +1858,30 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     #services {
-        padding: 10px 0 10px 0;
+        padding: 20px 0 20px 0;
         height: auto;
     }
 
     #services-main-container {
         width: 90%;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     
     .services-container {
-        width: 100%;
+        width: 45%;
         height: 150px;
         padding: 5px;
     }
 
     .services-container svg {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
 
     .services-container span {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        max-width: 150px;
     }
 
     /* @media (max-width: 572px) {
@@ -1913,23 +1915,35 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     .card-products {
         height: 420px;
+        justify-content: start;
+        position: relative;
     }
 
     .products-title-price {
+        margin-bottom: auto;
         margin-top: 5px;
-        margin-bottom: 5px;
     }
 
     .products-title-price span {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        position: absolute;
+        bottom: 50px;
     }
 
-    .products-title-price h3 {
-        font-size: 0.9rem;
+    @media (max-width: 516px) {
+       .products-title-price h3 {
+            font-size: 0.8rem;
+        } 
     }
+    
 
     #products-container {
         width: 90%;
+        height: auto;
+    }
+
+    .column-products {
+        height: auto;
     }
 
     @media (max-width: 710px) {
@@ -1939,10 +1953,33 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     @media (max-width: 470px) {
+
+        #category-container {
+            flex-wrap: wrap;
+        }
+
+        #products-container {
+            padding: 5px;
+        }
+
+        .column-products {
+            gap: 5px;
+        }
+
+        .card-products img {
+            height: 60%;
+        }
         .card-products {
-            height: 400px;
+            height: 350px;
+        }
+
+        #button-add-cart {
+            font-size: 0.7rem;
+            height: 35px;
         }
     }
+
+
 
 }
 
