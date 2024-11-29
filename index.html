@@ -42,7 +42,7 @@
                                 <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
                                 <span x-text="item.quantity">1</span>
                                 <button id="add" @click="$store.cart.add(item)">&plus;</button>
-                                <span x-text="rupiah(item.total)"></span>
+                                &equals;<span x-text="rupiah(item.total)"></span>
                             </div>
                         </div>
                     </div>

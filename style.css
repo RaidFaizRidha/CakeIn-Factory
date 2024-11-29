@@ -220,7 +220,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     .cart-page .cart-item {
         position: relative;
-        margin: 2rem 1.5rem;
+        margin: 2rem 1.5rem 0 1.5rem;
         display: flex;
         align-items: center;
         gap: 1.5rem;
@@ -242,6 +242,9 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
     .cart-page .item-price {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
         font-size: 1rem;
     }
 
@@ -267,7 +270,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     .cart-page h4 {
         margin: 0 1.5rem;
         font-size: 1.6rem;
-        margin-top: -2rem;
         padding: 1rem;
         border-bottom: 1px dashed #44444470;
     }
@@ -304,7 +306,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         text-align: center;
         position: relative;
         color: #444444;
-        margin: 0 50px;
         width: 80%;
         max-width: 1300px;
     }
@@ -429,7 +430,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
             text-align: center;
             position: relative;
             color: #444444;
-            margin: 0 50px;
             width: 80%;
             max-width: 1300px;
         }
@@ -1274,7 +1274,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         top: 0;
         right: -100%;
         width: 25.7rem;
-        height: 100vh;
         padding: 0;
         transition: 0.3s;
         background-color: rgb(244, 244, 246);
@@ -1322,7 +1321,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     .cart-page .cart-item {
         position: relative;
-        margin: 2rem 1.5rem;
         display: flex;
         align-items: center;
         gap: 1.5rem;
@@ -1369,7 +1367,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     .cart-page h4 {
         margin: 0 1.5rem;
         font-size: 1.6rem;
-        margin-top: -2rem;
         padding: 1rem;
         border-bottom: 1px dashed #44444470;
     }
@@ -1690,81 +1687,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-style: italic;
       }
 
-      /* modal box */
-      .modal {
-        display: flex;
-        position: fixed;
-        z-index: 9999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-color: rgba(0, 0, 0, 0.7);
-        align-items: center;
-      }
-      
-      .modal-container {
-        position: relative;
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 1.2rem;
-        border: 1px solid #666;
-        width: 80%;
-        max-width: 1000px;
-        height: 400px;
-        display: flex;
-        align-items: center;
-        animation: animateModal 0.5s;
-      }
-
-      @keyframes animateModal  {
-        from {
-            top: -300px;
-            opacity: 0;
-        }
-
-        to {
-            top: 0;
-            opacity: 1;
-        }
-      }
-    
-      .modal-container .close-icon {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-      }
-    
-      .modal-content {
-        display: flex;
-        flex-wrap: nowrap;
-        width: 100%;
-      }
-
-      .modal-content img{
-        height: 20rem;
-        margin-right: 2rem;
-        background-color: #e9c0ad;
-      }
-
-      .modal-content p {
-        font-size: 1.2rem;
-        line-height: 1.8rem;
-        margin: 1.2rem 0;
-      }
-
-     .product-content {
-        width: 100%;
-        position: relative;
-     }
-
-     .product-content span {
-        position: absolute;
-        bottom: 3rem;
-        left: 0;
-     }
-
      #button-add-cart-detailbox {
         font-size: 0.9rem;
         width: 100%;
@@ -1788,6 +1710,11 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         width: 20rem;
     }
 
+    .cart-page .cart-item #add,
+    .cart-page .cart-item #remove {
+        font-size: 0.9rem;
+    }
+
     @media (max-width: 500px) {
         .cart-page .cart-item {
             gap: 1rem;
@@ -1798,7 +1725,11 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         }
 
         .cart-page {
-            width: 13rem;
+            width: 15rem;
+        }
+
+        .dropdown-page {
+            width: 15rem;
         }
 
         .item-detail h3 {
@@ -1816,15 +1747,23 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         .cart-page .cart-item #remove {
             margin-left: 0;
         }
-    }
 
-    .cart-page .cart-item #add,
-    .cart-page .cart-item #remove {
-        font-size: 0.9rem;
+        .cart-page h2 {
+            font-size: 2rem;
+        }
+
+        .cart-page h4 {
+            font-size: 1.2rem;
+        }
+
+        .checkout-button {
+            padding: 13px;
+            font-size: 0.8rem;
+        }
     }
 
     #foreword {
-        width: 90%;
+        width: 85%;
     }
 
     #foreword h1 {
@@ -1891,6 +1830,47 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     #foreword span {
         max-width: 350px;
+    }
+
+    .modal-content img {
+      height: 15rem;  
+    }
+
+    .modal-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 630px) {
+        .modal-container {
+            height: 60%;
+        }
+        
+        .modal-content {
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .modal-content img {
+            margin: auto;
+            margin-top: 2rem;
+            margin-bottom: 10px;
+            object-fit: contain;
+            width: 100%;
+            height: 200px; 
+        }
+        
+        .product-content {
+            height: 100%;
+        }
+
+        .product-content span {
+            margin-top: 10px;
+        }
     }
 
     #services {
