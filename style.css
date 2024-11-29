@@ -1846,7 +1846,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
 
     @media (max-width: 630px) {
         .modal-container {
-            height: 60%;
+            height: 80%;
         }
         
         .modal-content {
