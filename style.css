@@ -688,7 +688,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     }
 
 
-    #about {
+    /* #about {
         margin-top: 150px;
         overflow: hidden;
         background-color: #d3622d;
@@ -741,7 +741,7 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     .highlight-desc {
         font-size: larger;
         color: #e9c0ad;
-    }
+    } */
 
     #subscription {
         overflow: hidden;
@@ -826,6 +826,18 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         align-items: center;
         font-size: 0.9rem;
         padding: 20px;
+    }
+
+    .mapouter{
+        position:relative;text-align:right;width:100%;height:500px;
+    }
+
+    .gmap_canvas {
+        overflow:hidden;background:none!important;width:100%;height:500px;
+    }
+
+    .gmap_iframe {
+        height:500px!important;
     }
 
     #order-now-footer {
@@ -1992,6 +2004,35 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         #button-add-cart {
             font-size: 0.7rem;
             height: 35px;
+        }
+    }
+
+    @media (max-width: 668px) {
+        .subscription-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #location {
+            width: 100%;
+        }
+
+        .subscription-form {
+            width: 100%;
+        }
+
+        .mapouter {
+            height: 300px;
+        }
+
+        .gmap_canvas {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .subscription-form h2 {
+            font-size: 1.6rem;
         }
     }
 }
