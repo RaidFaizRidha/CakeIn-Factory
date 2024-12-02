@@ -2028,11 +2028,13 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         .gmap_canvas {
             height: 300px;
         }
-    }
 
-    @media (max-width: 500px) {
         .subscription-form h2 {
             font-size: 1.6rem;
+        }
+
+        .input label {
+            font-size: 1.1rem;
         }
     }
 }
