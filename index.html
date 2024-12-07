@@ -15,7 +15,7 @@
                 <li><a class="navbar-menu actived" href="#hero">Home</a></li>
                 <li><a class="navbar-menu" href="#products">Products</a></li>
                 <!-- <li><a class="navbar-menu" href="services.html">Services</a></li> -->
-                <li><a class="navbar-menu" href="#about">About us</a></li>
+                <li><a class="navbar-menu" href="#subscription">About us</a></li>
                 <li><a class="navbar-menu" href="./contact/contact.html">Contact</a></li>
             </ul>
         </div>
@@ -37,7 +37,7 @@
                     <div class="cart-item">
                         <img :src="`./assets/image/${item.img}`" :alt="item.name">
                         <div class="item-detail">
-                            <h3 x-text="item.name">sdasdasd</h3>
+                            <h3 x-text="item.name"></h3>
                             <div class="item-price">
                                 <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
                                 <span x-text="item.quantity">1</span>
@@ -51,6 +51,80 @@
                 <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
 
                 <button class="checkout-button" x-show="$store.cart.items.length" type="submit" id="checkout-button" value="Checkout">CHECKOUT</button>              
+            </div>
+            <div class="client-form">
+                <div class="header-cf">
+                    <button class="close-icon-delivery">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path d="M18 6l-12 12" />
+                          <path d="M6 6l12 12" />
+                        </svg>
+                      </button>
+                  
+                      <!-- Title -->
+                      <div id="delivery-title">
+                        <h2>Complete Your Order</h2>
+                      </div>
+                  </div>
+                <div class="delivery-option-container">
+                  <!-- Form -->
+                  <form id="order-form" action="#" method="POST">
+                    <!-- Personal Details -->
+                    <div class="form-group">
+                      <label for="name">Full Name</label>
+                      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+              
+                    <!-- Delivery Options -->
+                    <h3>Choose the option:</h3>
+                    <div class="option">
+                        <a id="pickup" class="option-link" onclick="chooseOption('pickup')">
+                          <h3>Pickup</h3>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-building-store">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 21l18 0" />
+                            <path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4" />
+                            <path d="M5 21l0 -10.15" />
+                            <path d="M19 21l0 -10.15" />
+                            <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+                          </svg>
+                        </a>
+                        <a id="delivery" class="option-link" onclick="chooseOption('delivery')">
+                          <h3>Delivery</h3>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-truck-delivery">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            <path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                            <path d="M3 9l4 0" />
+                          </svg>
+                        </a>
+                    </div>
+              
+                    <!-- Address Information -->
+              
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Enter your shipping address" disabled></textarea>
+                    </div>
+              
+                    <!-- Submit Button -->
+                    <div class="submit-btn-container">
+                        <button type="submit" id="submit-btn" class="submit-btn" disabled>Place Order</button>
+                    </div>
+                  </form>
+                </div>
             </div>
         </div>
 
@@ -88,7 +162,7 @@
                                 <path d="M22 10v4" />
                             </svg><span>Products</span>
                         </a></li>
-                        <li><a class="navbar-menu-dropdown" href="#about">
+                        <li><a class="navbar-menu-dropdown" href="#subscription">
                             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-question">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
@@ -230,22 +304,6 @@
 
         <!-- Modal Box Item Detail end-->
     </section>
-
-    <!-- <section id="about">
-        <div id="about-main-container">
-            <div id="about-image"><img src="./assets/image/one-continuous-line-drawing-young-handsome-male-chef-serving-top-main-dish-menu-hotel-vector_533993-15947-removebg-preview (1).png" alt="about" ></div>
-            <div id="about-desc">
-                <h2 id="about-title">Lorem ipsum dolor sit amet</h2>
-                <p id="desc">
-                    <span class="highlight-desc">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. <span class="highlight-desc">Proin placerat</span> dolor non libero rhoncus, vel maximus mauris consequat. Pellentesque nec metus id lectus feugiat interdum.
-                    <br>
-                    <br>
-                    <span class="highlight-desc">Aliquam</span> tellus lorem, luctus sagittis justo nec, pharetra cursus quam.
-                    Integer interdum, dui et gravida varius, urna lacus consequat dolor, quis mattis magna risus ac nibh. <span class="highlight-desc">Morbi</span> in metus eu urna fringilla porttitor.
-                </p>
-            </div>
-        </div>
-    </section> -->
 
     <section id="subscription">
         <h2 id="subscription-title">Our Shop</h2>

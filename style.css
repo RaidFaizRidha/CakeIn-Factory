@@ -18,6 +18,10 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
+
     body {
         width: 100%;
         font-family: "Ubuntu", sans-serif;
@@ -282,6 +286,284 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         padding: 20px;
         width: 150px;
     }
+
+    .client-form {
+        z-index: 999;
+        padding: 20px;
+        padding-top: 0;
+        width: 80%;
+        max-height: 90vh; /* Use viewport height for better control */
+        overflow-y: auto; /* Enable scrolling for overflowing content */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        max-width: 600px;
+        margin: auto;
+        background: #fff;
+        border: 1px solid #44444470;
+        position: relative;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        justify-content: flex-start; /* Align content to the top */
+        align-items: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional for better styling */
+    }
+
+    @media (max-width: 663px) {
+        .client-form {
+            height: 80%;
+        }
+    }
+
+    .form-active {
+        display: flex;
+    }
+
+    .header-cf {
+        width: 100%;
+        position: sticky; /* Stick the header at the top */
+        top: 0; /* Stick to the top of the form */
+        background-color: white; /* Cover any scrolling content */
+        z-index: 10; /* Ensure it stays above other content */
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ddd; /* Optional: Divider for better visuals */
+    }
+
+    .close-icon-delivery {
+        position: absolute;
+        right: -1.7rem;
+        top: 0;
+        z-index: 9999;
+        color: #444444;
+        background-color: transparent;
+        width: auto;
+        height: auto;
+    }
+
+    .close-icon-delivery:hover {
+        color: #d3622d;
+        background-color: transparent;
+    }
+
+    #delivery-title {
+        background-color: #ffffff;
+        z-index: 2;
+        width: 100%;
+    }
+      
+    .delivery-option-container {
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .client-form h2 {
+        margin: 1rem 0;
+    }
+
+    @media (max-width: 663px) {
+        .client-form h2 {
+            font-size: 1.5rem;
+        }
+    }
+      
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    .delivery-option-container label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    @media (max-width: 663px) {
+        .delivery-option-container label {
+            font-size: 1rem;
+        }
+    }
+      
+    input,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+      
+      textarea {
+        resize: none;
+      }
+
+      .option {
+        margin-bottom: 1.2rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 2rem;
+        height: 100%;
+        width: 100%;
+    }
+
+    
+    @media (max-width: 663px) {
+        .option {
+            flex-direction: column;
+        }
+    }
+
+    .option a {
+        text-decoration: none;
+        color: #333;
+        text-align: center;
+    }
+      
+    .option svg {
+        margin: 5px 0;
+    }
+
+
+
+    .option-link {
+        text-decoration: none;
+        color: #333;
+        padding: 10px;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+      
+    .option-link:hover {
+        background-color: #f4f4f4;
+    }
+      
+    .option-link.selected {
+        border-color: #444444;
+        background-color: #e6ffe6;
+        font-weight: bold;
+    }
+      
+    textarea:disabled {
+        background-color: #f9f9f9;
+        color: #999;
+        cursor: not-allowed;
+    }
+      
+
+    .option #pickup,
+    .option #delivery {
+        border-radius: 5px;
+        padding: 10px;
+        color: rgb(244, 244, 246);
+        background-color: #d3622d;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 200px;
+        min-width: 80px;
+        cursor: pointer;
+        margin-bottom: 0px;
+        gap: 5px;
+        height: 100%;
+    }
+
+    @media (max-width: 663px) {
+        .option #pickup,
+        .option #delivery {
+            max-width: 250px;
+            width: 100%;
+            padding: 5px;
+        }
+    }
+
+    .option #pickup h3,
+    .option #delivery h3 {
+        font-size: 1.1rem;
+    }
+
+    .option #pickup svg,
+    .option #delivery svg {
+        width: 3.5rem;
+        height: auto;
+    }
+
+    .option #pickup span,
+    .option #delivery span {
+        font-size: 0.9rem;
+    }
+
+    .submit-btn-container {
+        position: sticky; /* Make the container sticky */
+        bottom: 0; /* Stick it to the bottom */
+        background-color: #fff; /* Solid background behind the button */
+        z-index: 10; /* Ensure it stays on top */
+        padding: 10px; /* Add padding for spacing around the button */
+        width: 100%; /* Full width of the form */
+        outline: 1px solid #8d8d8d70;
+        border-radius: 4px;
+    }
+      
+    .submit-btn {
+        position: sticky; /* Make button sticky at the bottom */
+        bottom: 0; /* Stick it to the bottom */
+        background-color: #d3622d;
+        color: white;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 10;
+    }
+      
+    .submit-btn:hover {
+        background-color: #444444;
+    }
+
+    .submit-btn:disabled {
+        background-color: #d3612d41;
+        cursor: not-allowed;
+    }
+
+
+      
+
+    /* .client-form {
+        position: relative;
+        background-color: #fefefe;
+        margin: 15% auto;
+       
+        border: 1px solid #44444470;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        animation: animateModal 0.5s;
+        height: 350px;
+        width: 80%;
+        max-width: 500px;
+        z-index: 999;
+    }
+
+    .delivery-option-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(244, 244, 246);
+    }
+
+    .delivery-option-container h2 {
+        color: #444444;
+        font-size: 1.2rem;
+    }*/
 /* header section end */
 
 /* hero section start */
@@ -687,62 +969,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         padding: 20px;
     }
 
-
-    /* #about {
-        margin-top: 150px;
-        overflow: hidden;
-        background-color: #d3622d;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 350px;
-        outline: 1px solid #44444470;
-    }
-
-    #about-main-container {
-        display: flex;
-        width: 80%;
-        max-width: 1300px;
-        justify-content: start;
-        align-items: center;
-    }
-
-    #about-image {
-        width: 250px;
-        height: 270px;
-        background-color: rgb(233, 233, 233);
-        border-radius: 10px;
-        outline: 1px solid #44444470;
-        position: relative;
-        margin-right: 100px;
-    }
-
-    #about-image img {
-        height: 400px;
-        width: 650px;
-        position: absolute;
-        left: -10px;
-        bottom: -50px;
-        -webkit-transform: scaleX(-1);
-        transform: 
-        scaleX(-1);
-    }
-
-    #about-desc {
-        width: 70%;
-        color: rgb(244, 244, 246);
-    }
-
-    #desc {
-        margin-top: 20px;
-        font-size: 1rem;
-    }
-
-    .highlight-desc {
-        font-size: larger;
-        color: #e9c0ad;
-    } */
-
     #subscription {
         overflow: hidden;
         background-color: rgb(244, 244, 246);
@@ -1028,6 +1254,11 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         position: absolute;
         right: 1rem;
         top: 1rem;
+        color: #444444;
+      }
+
+      .modal-container .close-icon:hover {
+        color: #d3622d;
       }
     
       .modal-content {
@@ -1911,18 +2142,6 @@ Peachy Pink (#E6C9B7) – For background highlights in feature sections. */
         font-size: 0.9rem;
         max-width: 150px;
     }
-
-    /* @media (max-width: 572px) {
-        .services-container {
-            width: 150px;
-        }
-    }
-
-    @media (max-width: 450px) {
-        .services-container {
-            width: 100px;
-        }
-    } */
 
     @media (max-width: 583px) {
         #category-container li button {

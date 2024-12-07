@@ -1,3 +1,21 @@
+const navLinks = document.querySelectorAll('.navbar-menu');
+const sections = document.querySelectorAll('section');
+
+let currentSection = 'home';
+window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+        if (window.scrollY >= (section.offsetTop - section.clientHeight / 3)) {
+            currentSection= section.id;
+        }
+    });
+
+    navLinks.forEach(navLink => {
+        if (navLink.href.includes(currentSection)) {
+            document.querySelector('.actived').classList.remove('actived');
+            navLink.classList.add('actived');
+        }
+    });
+});
 
 // toggle class active for cart page start
 const shoppingCart = document.querySelector('.cart-page');
@@ -8,14 +26,66 @@ document.querySelector('#cart-container-button').onclick = (e) => {
     e.preventDefault();
 };
 
+const fc = document.querySelector('.client-form');
 const sc = document.querySelector('#cart-container-button');
 document.addEventListener('click', function(e) {
-    if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
+    if (!sc.contains(e.target) && !shoppingCart.contains(e.target) && !fc.contains(e.target)) {
         shoppingCart.classList.remove('active');
         document.body.classList.remove('no-scroll');
-        document.querySelector('.modal-cart').classList.remove('active-modal-cart')
+        document.querySelector('.modal-cart').classList.remove('active-modal-cart');
     };
 });
+
+const cfButton = document.querySelector('.checkout-button');
+document.querySelector('.checkout-button').onclick = (e) => {
+    fc.classList.toggle('form-active');
+    e.preventDefault();
+};
+
+const closeIconCf = document.querySelector('.close-icon-delivery');
+document.addEventListener('click', function(e) {
+    if (closeIconCf.contains(e.target)) {
+        fc.classList.remove('form-active'); // Close the form
+        return; // Exit to prevent other conditions from running
+    }
+
+    if (!fc.contains(e.target) && !cfButton.contains(e.target)) {
+        fc.classList.remove('form-active');
+    };
+});
+
+function chooseOption(option) {
+    const addressField = document.getElementById('address');
+    const pickupLink = document.getElementById('pickup');
+    const submitButton = document.getElementById('submit-btn');
+    const deliveryLink = document.getElementById('delivery');
+    addressField.disabled = true;
+  
+    if (option === 'delivery') {
+      // Enable address field for delivery
+      addressField.disabled = false;
+      addressField.required = true;
+      deliveryLink.classList.add('selected');
+      pickupLink.classList.remove('selected');
+      submitButton.disabled = false;
+    } else if (option === 'pickup') {
+      // Disable address field for pickup
+      addressField.disabled = true;
+      addressField.required = false;
+      pickupLink.classList.add('selected');
+      deliveryLink.classList.remove('selected');
+      submitButton.disabled = false;
+    }
+  }
+
+  function initializeForm() {
+    const submitButton = document.getElementById('submit-btn');
+    submitButton.disabled = true; // Disable the button initially
+  }
+  
+  // Call this function when the page loads
+  window.onload = initializeForm;
+  
 // toggle class active for cart page end
 
 // toggle dropdown
