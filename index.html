@@ -9,7 +9,7 @@
 </head>
 <body>
     <section id="header" x-data>
-        <a class="logo" href="./index.html"><img src="./assets/image/WhatsApp_Image_2024-11-12_at_10.03.30-removebg-preview.png" alt="" width="115" height="100"></a>
+        <a class="logo" href="./index.html"><img src="./assets/image/logo.png" alt="" width="115" height="100"></a>
         <div>
             <ul id="navbar">
                 <li><a class="navbar-menu actived" href="#hero">Home</a></li>
@@ -142,7 +142,7 @@
             </a>
             <div class="modal-dropdown">
                 <div class="dropdown-page">
-                    <a class="logo" href="./index.html"><img src="./assets/image/WhatsApp_Image_2024-11-12_at_10.03.30-removebg-preview.png" alt="" width="115" height="100"></a>
+                    <a class="logo" href="./index.html"><img src="./assets/image/logo.png" alt="" width="115" height="100"></a>
                     <ul id="dropdown-menu">
                         <li><a class="navbar-menu-dropdown" href="#hero">
                             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home">
@@ -257,9 +257,8 @@
         <div id="category">
             <ul id="category-container">
                 <li><button class="category-menu active-category" onclick="filterSelection('all')">See All</button></li>
-                <li><button class="category-menu" onclick="filterSelection('cheesecake')">Cheesecakes</button></li>
-                <li><button class="category-menu" onclick="filterSelection('buns')">Buns</button></li>
-                <li><button class="category-menu" onclick="filterSelection('brownies')">Brownies</button></li>
+                <li><button class="category-menu" onclick="filterSelection('cheesecake-slice')">Cheesecakes Slice</button></li>
+                <li><button class="category-menu" onclick="filterSelection('cheesecake-whole')">Whole cake</button></li>
             </ul>
         </div>
         <div id="products-container">
@@ -269,9 +268,11 @@
                         <img :src="`assets/image/${item.img}`" :alt="item.name">
                         <div class="products-title-price">
                             <h3 x-text="item.name"></h3>
+                        </div>
+                        <div class="card-footer add">
                             <span x-text="rupiah(item.price)"></span>
-                        </div>    
-                        <button type="button" id="button-add-cart" x-text="item.buttonText" @click.stop.prevent="$store.cart.add(item), addedText(item)"></button>
+                            <button type="button" id="button-add-cart" x-text="item.buttonText" @click.stop.prevent="$store.cart.add(item), addedText(item)"></button>
+                        </div>
                     </a>
                 </template>
             </div>

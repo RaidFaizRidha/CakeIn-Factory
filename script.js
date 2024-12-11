@@ -127,7 +127,7 @@ function filterSelection(c) {
         removingClass( x[i], "show" );
         if ( x[i].className.indexOf(c) > -1 ) addingClass( x[i], "show" )
     }
-}
+};
 
 function addingClass(element, name) {
     let arr1, arr2;
@@ -136,7 +136,7 @@ function addingClass(element, name) {
     for (let i = 0; i < arr2.length; i++) {
         if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
     }
-}
+};
 
 function removingClass(element, name) {
     let arr1,arr2;
