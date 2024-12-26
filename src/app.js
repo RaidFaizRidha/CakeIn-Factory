@@ -8,10 +8,12 @@ document.addEventListener('alpine:init', () => {
         items: [
             { id: 1, name: "Original Burnt Cheesecake (1 Slice)", img: "original-slice.jpeg", price: 25000, class: "cheesecake-slice show", description: "A classic cheesecake with a rich and creamy texture."},
             { id: 2, name: "Matcha Burnt Cheesecake (1 Slice)", img: "matcha-slice.jpeg", price: 26000, class: "cheesecake-slice show", description: "A smaller version of our signature cheesecake." },
-            { id: 3, name: "Crumble Blueberry Cheesecake (1 Slice)", img: "crumble-slice.jpeg", price: 30000, class: "cheesecake-slice show", description: "A unique burnt cheesecake with a rich, caramelized top."},
-            { id: 4, name: "Original Burnt Cheesecake (Whole Cake)", img: "original-whole.jpeg", price: 200000, class: "cheesecake-whole show", description: "A soft, fluffy bun filled with rich cream filling."},
-            { id: 5, name: "Matcha Burnt Cheesecake (Whole Cake)", img: "matcha-whole.jpeg", price: 208000, class: "cheesecake-whole show", description: "A deliciously soft bun with a subtle milk flavor."},
-            { id: 6, name: "Crumble Blueberry Cheesecake (Whole cake)", img: "crumble-whole.jpeg", price: 230000, class: "cheesecake-whole show", description: "Chewy brownies with a generous swirl of Nutella."}
+            { id: 3, name: "Crumble Blueberry Cheesecake (1 Slice)", img: "crumble-slice-new.jpeg", price: 30000, class: "cheesecake-slice show", description: "A unique burnt cheesecake with a rich, caramelized top."},
+            { id: 4, name: "Brownies Burnt Cheesecake (1 Slice)", img: "brownies-slice.jpeg", price: 30000, class: "cheesecake-slice show", description: "A decadent dessert combining a fudgy brownie base with a rich, caramelized burnt cheesecake topping."},
+            { id: 5, name: "Original Burnt Cheesecake (Whole Cake)", img: "original-whole.jpeg", price: 200000, class: "cheesecake-whole show", description: "A soft, fluffy bun filled with rich cream filling."},
+            { id: 6, name: "Matcha Burnt Cheesecake (Whole Cake)", img: "matcha-whole.jpeg", price: 208000, class: "cheesecake-whole show", description: "A deliciously soft bun with a subtle milk flavor."},
+            { id: 7, name: "Crumble Blueberry Cheesecake (Whole cake)", img: "crumble-whole.jpeg", price: 240000, class: "cheesecake-whole show", description: "Chewy brownies with a generous swirl of Nutella."},
+            { id: 8, name: "Brownies Burnt Cheesecake (Whole Slice)", img: "brownies-whole.jpeg", price: 240000, class: "cheesecake-whole show", description: "Chewy brownies with a generous swirl of Nutella."}
         ],
 
         openModal(item) {

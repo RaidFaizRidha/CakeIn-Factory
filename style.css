@@ -233,6 +233,7 @@ html {
     }
 
     .cart-page img {
+        object-fit: cover;
         height: 5rem;
         width: 5rem;
         outline: 1px solid #444444;
