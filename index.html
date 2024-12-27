@@ -73,12 +73,12 @@
                     <!-- Personal Details -->
                     <div class="form-group">
                       <label for="name">Full Name</label>
-                      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                      <input type="text" id="names" name="name" placeholder="Enter your full name" required>
                     </div>
               
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                      <input type="email" id="emails" name="email" placeholder="Enter your email" required>
                     </div>
               
                     <div class="form-group">
@@ -323,23 +323,22 @@
             </div>
             <div class="subscription-form">
                 <h2>Subscribe to our newsletter</h2>
-                <span id="subs-desc">Subscribe to our newsletter! to get more information about our new menu soon.</span>
-                <form action="">
+                <span id="subs-desc">Subscribe to our newsletter to get more information about our new menu soon.</span>
+                <form id="subscriptionForm">
                     <div class="input">
-                        <label for="name">
+                        <label>
                             <span>Name</span>
                             <input type="text" name="name" id="name" required>
                         </label>
-    
-                        <label for="email">
+                        <label>
                             <span>Email</span>
                             <input type="email" name="email" id="email" required>
                         </label>
-                    </div>                   
-
-                    <button class="subs-button" type="submit" id="subs-button" value="subscription">SUBSCRIBE</button>
-                </form>
-            </div>
+                    </div>
+                    <button class="subs-button" type="submit" id="subs-button">SUBSCRIBE</button>
+                    <span id="subs-status"></span>
+                </form>           
+            </div>            
         </div>
         <div id="order-now-footer">
             <h3>Ready to dive into some cheesecake <br/> deliciousness?</h3>

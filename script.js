@@ -156,3 +156,6 @@ for (let i = 0; i < arr2.length; i++) {
     }
 };
 // category filter end
+
+
+

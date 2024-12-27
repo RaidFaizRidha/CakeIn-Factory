@@ -113,3 +113,44 @@ const rupiah = (number) => {
         minimumFractionDigits: 0,
     }).format(number);
 };
+
+document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    // Create the JSONP script tag
+    const script = document.createElement('script');
+    const webAppUrl = 'https://script.google.com/macros/s/AKfycbwrKEIRAGIoXEmK4nXp4aVWvigkVVRIul8n8qtCdZOY6pdWxCzoFIfz_tKmT5KKlwb3Gw/exec';
+    script.src = `${webAppUrl}?callback=handleResponse&name=${name}&email=${email}`;
+
+    // Append the script to the body
+    document.body.appendChild(script);
+});
+
+// Callback function for the JSONP response
+function handleResponse(response) {
+    console.log("Response received:", response); // Debug the response
+    const msg = document.getElementById("subs-status");
+    const nameInput  = document.getElementById("name");
+    const emailInput  = document.getElementById("email");
+
+    if (response.status === "success") {
+        // alert(response.message); // Success message
+        msg.innerHTML = "Subscription Successful";
+        nameInput.value = "";
+        emailInput.value = "";
+        setTimeout(function() {
+            msg.innerHTML = "";
+        },3000);
+    } else {
+        // alert("An error occurred: " + response.message); // Error message
+        msg.innerHTML = "Subscription Failed"
+        nameInput.value = "";
+        emailInput.value = "";
+        setTimeout(function() {
+            msg.innerHTML = "";
+        },3000);
+    }
+}
