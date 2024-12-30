@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="style.css">
     <script defer src="src/app.js"></script>
 </head>
 <body>
@@ -52,7 +52,7 @@
 
                 <button class="checkout-button" x-show="$store.cart.items.length" type="submit" id="checkout-button" value="Checkout">CHECKOUT</button>              
             </div>
-            <div class="client-form">
+            <div class="client-form" x-show="$store.cart.items.length">
                 <div class="header-cf">
                     <button class="close-icon-delivery">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
@@ -69,7 +69,11 @@
                   </div>
                 <div class="delivery-option-container">
                   <!-- Form -->
-                  <form id="order-form" action="#" method="POST">
+                  <form id="order-form" action="#" method="POST" data-option="">
+                    <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
+                    <input type="hidden" name="total" x-model="$store.cart.total">
+                    <input type="hidden" id="option" name="option">
+
                     <!-- Personal Details -->
                     <div class="form-group">
                       <label for="name">Full Name</label>
@@ -83,7 +87,7 @@
               
                     <div class="form-group">
                       <label for="phone">Phone Number</label>
-                      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                      <input type="number" id="phone" name="phone" placeholder="Enter your phone number" required>
                     </div>
               
                     <!-- Delivery Options -->
@@ -116,7 +120,7 @@
               
                     <div class="form-group">
                         <label for="address">Shipping Address</label>
-                        <textarea id="address" name="address" rows="3" placeholder="Enter your shipping address" disabled></textarea>
+                        <textarea id="address" name="shippingAddress" rows="3" placeholder="Enter your shipping address"></textarea>
                     </div>
               
                     <!-- Submit Button -->

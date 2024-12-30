@@ -57,34 +57,23 @@ document.addEventListener('click', function(e) {
 function chooseOption(option) {
     const addressField = document.getElementById('address');
     const pickupLink = document.getElementById('pickup');
-    const submitButton = document.getElementById('submit-btn');
     const deliveryLink = document.getElementById('delivery');
-    addressField.disabled = true;
+    // addressField.disabled = true;
   
     if (option === 'delivery') {
       // Enable address field for delivery
-      addressField.disabled = false;
-      addressField.required = true;
+    //   addressField.disabled = false;
+    //   addressField.required = true;
       deliveryLink.classList.add('selected');
       pickupLink.classList.remove('selected');
-      submitButton.disabled = false;
     } else if (option === 'pickup') {
       // Disable address field for pickup
-      addressField.disabled = true;
-      addressField.required = false;
+    //   addressField.disabled = true;
+    //   addressField.required = false;
       pickupLink.classList.add('selected');
       deliveryLink.classList.remove('selected');
-      submitButton.disabled = false;
     }
   }
-
-  function initializeForm() {
-    const submitButton = document.getElementById('submit-btn');
-    submitButton.disabled = true; // Disable the button initially
-  }
-  
-  // Call this function when the page loads
-  window.onload = initializeForm;
   
 // toggle class active for cart page end
 
@@ -156,6 +145,7 @@ for (let i = 0; i < arr2.length; i++) {
     }
 };
 // category filter end
+
 
 
 

@@ -105,6 +105,86 @@ document.addEventListener('alpine:init', () => {
 
 });
 
+const form = document.getElementById('order-form');
+const checkoutButton = document.getElementById('submit-btn');
+const shippingAddressField = document.getElementById('address');
+const pickupOption = document.getElementById('pickup');
+const deliveryOption = document.getElementById('delivery');
+
+// Initially disable the button
+checkoutButton.disabled = true;
+shippingAddressField.disabled = true;
+
+// Listen for input changes on the form
+form.addEventListener('input', validateForm);
+
+// Listen for option changes (Pickup or Delivery)
+pickupOption.addEventListener('click', function () {
+    shippingAddressField.required = false; // Address is not required for Pickup
+    shippingAddressField.disabled = true; // Disable the address field
+    shippingAddressField.value = ''; // Clear the address field
+    form.dataset.option = 'pickup'; // Set selected option
+    document.getElementById('option').value = 'Pickup'; // Update hidden input
+    validateForm(); // Revalidate the form to update the button state
+});
+
+deliveryOption.addEventListener('click', function () {
+    shippingAddressField.required = true; // Address is required for Delivery
+    shippingAddressField.disabled = false; // Enable the address field
+    form.dataset.option = 'delivery'; // Set selected option
+    document.getElementById('option').value = 'Delivery'; // Update hidden input
+    validateForm(); // Revalidate the form to update the button state
+});
+
+// Validate the form
+function validateForm() {
+    let allFieldsFilled = true;
+
+    // Check all form inputs
+    for (let i = 0; i < form.elements.length; i++) {
+        const field = form.elements[i];
+        // Skip buttons or non-input elements
+        if (field.type !== 'button' && field.type !== 'submit') {
+            if (field.required && !field.value.trim()) {
+                allFieldsFilled = false;
+                break;
+            }
+        }
+    }
+
+    const optionSelected = form.dataset.option === 'pickup' || form.dataset.option === 'delivery';
+
+    // Enable or disable the button based on form input values and selected option
+    checkoutButton.disabled = !(allFieldsFilled && optionSelected);
+    checkoutButton.classList.toggle('disabled', !(allFieldsFilled && optionSelected));
+}
+
+checkoutButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = new URLSearchParams(formData);
+    const objData = Object.fromEntries(data);
+    const message = formatMessage(objData);
+    window.open('http://wa.me/6282286565181?text=' + encodeURIComponent(message));
+})
+
+const formatMessage = (obj) => {
+    const shippingAddress = obj.shippingAddress ? `Alamat: ${obj.shippingAddress}` : 'Alamat Pickup: Perumahan Buana Vista Indah tahap 1, Blok H No.49 \n https://maps.app.goo.gl/auL9tPRgFrHwYz4c9';
+    const option = obj.option === 'Pickup' ? 'Pickup' : 'Delivery';
+
+    return `Data Customer
+        Nama: ${obj.name}
+        Email: ${obj.email}
+        No HP: ${obj.phone}
+        Pilihan: ${option}
+        ${shippingAddress}
+
+Data Pesanan
+    ${JSON.parse(obj.items).map((item) => `${item.name} (${item.quantity} x ${rupiah(item.total)}) \n`).join('')}
+Total: ${rupiah(obj.total)}
+Terima Kasih.`;
+};
+
 // convert to rupiah
 const rupiah = (number) => {
     return new Intl.NumberFormat('id-ID', {
