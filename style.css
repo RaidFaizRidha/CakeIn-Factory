@@ -542,7 +542,7 @@ html {
         justify-content: center;
         align-items: center;
         /* height: 600px; */
-        height: 89vh;
+        height: 80vh;
     }
 
     #foreword {
@@ -1172,8 +1172,12 @@ html {
         fill: rgb(244, 244, 246);
     }
 
+    .socialContainer:hover .socialSvg path {
+        fill: #444444; /* Change to your desired color */
+    }
+
     .socialContainer:hover {
-        background-color: #e9c0ad;
+        background-color: rgb(244, 244, 246);
     }
       
       .social-icons {
@@ -2292,3 +2296,18 @@ html {
         padding: 8px;
     }
 }
+
+@media (max-width: 413px) {
+    #order-now-footer {
+      width: 90%
+    }
+  
+    #order-now-footer h3 {
+      font-size: 1.8rem;
+    }
+  
+    #order-now-footer button {
+      width: 120px;
+      padding: 12px;
+    }
+  }
